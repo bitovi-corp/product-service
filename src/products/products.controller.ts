@@ -11,7 +11,7 @@ import {
 import { CreateProductDto } from './dto/create-product.dto';
 import { ProductsService } from './products.service';
 import type { Product } from './entities/product.entity';
-import { AuthGuard, RequireRolesGuard, Roles } from '@sample-app/nestjs-mock-auth';
+import { AuthGuard, RequireRolesGuard, Roles } from '@r-tanner-f/nestjs-mock-auth';
 
 @Controller('products')
 export class ProductsController {
