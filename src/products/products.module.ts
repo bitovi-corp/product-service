@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ProductsController } from './products.controller';
 import { ProductsService } from './products.service';
-import { AuthModule } from '@r-tanner-f/nestjs-mock-auth';
+import { AuthModule } from '@bitovi-corp/auth-middleware';
 
 @Module({
   imports: [AuthModule],

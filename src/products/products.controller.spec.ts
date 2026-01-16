@@ -3,6 +3,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { ProductsController } from './products.controller';
 import { ProductsService } from './products.service';
 import { CreateProductDto } from './dto/create-product.dto';
+import { JwtParserService } from '@bitovi-corp/auth-middleware';
 
 describe('ProductsController', () => {
   let controller: ProductsController;
@@ -13,6 +14,10 @@ describe('ProductsController', () => {
     create: jest.fn(),
   };
 
+  const mockJwtParserService = {
+    parse: jest.fn(),
+  };
+
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       controllers: [ProductsController],
@@ -20,6 +25,10 @@ describe('ProductsController', () => {
         {
           provide: ProductsService,
           useValue: mockProductsService,
+        },
+        {
+          provide: JwtParserService,
+          useValue: mockJwtParserService,
         },
       ],
     }).compile();
